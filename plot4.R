@@ -1,4 +1,5 @@
 
+png("plot4.png", width = 480, height = 480)
 par(mfrow = c(2,2))
 
 with(energy, {plot(timestamp, Global_active_power, 
@@ -20,3 +21,5 @@ with(energy, {plot(timestamp, Global_active_power,
               plot(timestamp, Global_reactive_power, 
                    type="l", xlab = "datetime", ylab = "Global_reactive_power")
               })
+
+dev.off()
