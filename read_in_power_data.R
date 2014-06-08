@@ -1,6 +1,6 @@
 #
 # Read in the power consumption file
-#   only read consumption for dates 2007-02-01 through 2007-02-02
+#   Only read consumption for dates 2007-02-01 through 2007-02-02
 #   To reduce memory usage, calculate how many rows to skip and then read
 #
 
@@ -29,4 +29,5 @@ energy <- read.table("household_power_consumption.txt",
                      skip = (start_i - 1), nrows = nr, 
                      col.names = names(DF.row1))
 
+# Take the date time cols and create one datetime col with class Date
 energy$timestamp <- strptime(paste(energy$Date, energy$Time), "%d/%m/%Y %H:%M:%S")
