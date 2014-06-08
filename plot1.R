@@ -7,6 +7,7 @@
 # Get the column names
 DF.row1 <- read.table("household_power_consumption.txt", 
                       header = TRUE, nrow = 1, sep = ";")
+nc <- ncol(DF.row1)
 
 # The formatting to read the date from the file, for later
 setClass('myDate')

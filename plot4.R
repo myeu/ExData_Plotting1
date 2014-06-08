@@ -7,6 +7,7 @@
 # Get the column names
 DF.row1 <- read.table("household_power_consumption.txt", 
                       header = TRUE, nrow = 1, sep = ";")
+nc <- ncol(DF.row1)
 
 # The formatting to read the date from the file, for later
 setClass('myDate')
@@ -36,7 +37,7 @@ energy$timestamp <- strptime(paste(energy$Date, energy$Time), "%d/%m/%Y %H:%M:%S
 png("plot4.png", width = 480, height = 480)
 par(mfrow = c(2,2))
 with(energy, {plot(timestamp, Global_active_power, 
-                   type="l", xlab = "", ylab = "Global Active Power (kilowatts)")
+                   type="l", xlab = "", ylab = "Global Active Power")
               
               plot(timestamp, Voltage, type = "l", xlab = "datetime")
               
